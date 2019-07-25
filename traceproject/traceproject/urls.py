@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 import main.views
 import information.views
+import gongu.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main.views.home,name='home'),
     path('information/', information.views.infortmation, name='information'),
+    path('gongu/', gongu.views.gongu, name='gongu'),
 ]
