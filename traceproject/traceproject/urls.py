@@ -18,9 +18,14 @@ from django.urls import path
 import main.views
 import information.views
 import gongu.views
+import accounts.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main.views.home,name='home'),
-    path('information/', information.views.infortmation, name='information'),
+    path('information/', information.views.information, name='information'),
     path('gongu/', gongu.views.gongu, name='gongu'),
+    path('signup/', accounts.views.signup, name='signup'),
+    path('login/', accounts.views.login, name='login'),
+
 ]

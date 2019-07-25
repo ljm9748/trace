@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
-def infortmation(request) :
+def information(request) :
     return render(request,"information.html")
 # Create your views here.
