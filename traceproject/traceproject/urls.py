@@ -19,8 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 import main.views
 import information.views
+import gongu.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main.views.home,name='home'),
+<<<<<<< HEAD
     path('information/', information.views.information, name='information'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+=======
+    path('information/', information.views.infortmation, name='information'),
+    path('gongu/', gongu.views.gongu, name='gongu'),
+]
+>>>>>>> 01a7984fe3b30bd5f6304a7cce061f9fee35c50b
