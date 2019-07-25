@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Jikbang
 
-def infortmation(request) :
-    return render(request,"information.html")
+def information(request):
+    jikbang = Jikbang.objects
+    return render(request,"information.html",{'jikbang':jikbang})
 # Create your views here.
