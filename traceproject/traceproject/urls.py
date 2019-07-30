@@ -25,18 +25,9 @@ import accounts.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main.views.home,name='home'),
-<<<<<<< HEAD
     path('information/', information.views.information, name='information'),
-=======
-<<<<<<< HEAD
-    path('information/', information.views.information, name='information'),
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-=======
-    path('information/', information.views.infortmation, name='information'),
->>>>>>> 066d49dc90f3d6a1455180d5c19f21a21c352436
     path('gongu/', gongu.views.gongu, name='gongu'),
     path('signup/', accounts.views.signup, name='signup'),
     path('login/', accounts.views.login, name='login'),
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
-]
->>>>>>> 01a7984fe3b30bd5f6304a7cce061f9fee35c50b
