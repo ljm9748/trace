@@ -1,20 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,     get_object_or_404
 from .models import Jikbang
 from django.utils import timezone
+
+from .forms import Jikbang2
+
 
 
 def information(request):
     jikbang = Jikbang.objects
     return render(request,"information.html",{'jikbang':jikbang})
 
-def newdata(request):
+def create(request):
     return render(request, "newdata.html")
 
-def create(hoho):
-    blog = Jikbang()
-    blog.title=hoho.GET['title']
-    blog.title=hoho.GET['body']
-    blog.pub_date=timezone.datetime.now()
-    blog.save()
-    return redirect('/blog/', +str(blog.id))
+def newdata(hoho):
+    if hoho.method == 'FILES' :
+        form = Jikbang2(hoho.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('home')
+    else:
+        form = Jikbang2()
+        return render(hoho, 'newdata.html', {'form':form } )
+
+
+
+
+    # blogs.title=hoho.GET['title']
+    # blogs.title=hoho.GET['body']
+    # blogs.save()
+    # return redirect('/information/' + str(blogs.id))
 # Create your views here.

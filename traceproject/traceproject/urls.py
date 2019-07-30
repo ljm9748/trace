@@ -27,12 +27,11 @@ urlpatterns = [
     path('',main.views.home,name='home'),
     path('information/', information.views.information, name='information'),
     path('information/newdata/', information.views.newdata, name='newdata'),
-    path('information/newdata/create', information.views.create, name='create'),
+    path('information/create/', information.views.create, name='create'),
     path('gongu/', gongu.views.gongu, name='gongu'),
     path('signup/', accounts.views.signup, name='signup'),
     path('login/', accounts.views.login, name='login'),
-
-
+    
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
