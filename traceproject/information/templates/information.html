@@ -61,14 +61,15 @@
   <div class="container">
   <div class="nav-scroller py-1 mb-2">
     
-      <div class="navbar navbar-expand-lg" style=" background-color: #cecdcdc2; border-radius: 10px">
-            <a class="p-2 text-muted" href="{% url 'home' %}">Home</a>
-            <a class="p-2 text-muted" href="{%url 'information' %}">방 정보보기</a>
-            <a class="p-2 text-muted" href="#">공구</a>
-            <a class="p-2 text-muted" href="#">룸메이트 찾기</a>
-            <a class="p-2 text-muted" href="#">커뮤니티</a>
-        </nav>
-      </div>
+    <div class="navbar navbar-expand-lg" style=" background-color: #cecdcdc2; border-radius: 10px">
+      <nav class="nav d-flex justify-content-between">
+        <a class="p-2 text-muted" href="{% url 'home' %}">Home</a>
+        <a class="p-2 text-muted" href="{%url 'information' %}">방 정보보기</a>
+        <a class="p-2 text-muted" href="{%url 'gongu' %}">공구</a>
+        <a class="p-2 text-muted" href="#">룸메이트 찾기</a>
+        <a class="p-2 text-muted" href="#">커뮤니티</a>
+      </nav>
+    </div>
     </div>
 </header>
 <div class="container">
@@ -79,6 +80,8 @@
       <h1 class="jumbotron-heading">방 정보를 올리고 공유하세요!</h1>
       <p class="lead text-muted">본인이 살았던 집의 생생한 후기를 올리고, 다른사람들의 
           생생한 경험담을 들어보세요!
+          <br><br>
+          <a href="{% url 'newdata' %}" class="btn btn-primary btn-lg" >나도 정보공유하기</a>
       </p>
    
   </section>
@@ -118,6 +121,7 @@
             </div>
           </div>
         {%endfor%}
+
 
 
 
