@@ -14,8 +14,8 @@ def create(request):
     return render(request, "newdata.html")
 
 def newdata(hoho):
-    if hoho.method == 'FILES' :
-        form = Jikbang2(hoho.FILES)
+    if hoho.method == 'POST' :
+        form = Jikbang2(hoho.POST, hoho.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
