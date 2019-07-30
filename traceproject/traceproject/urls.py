@@ -32,6 +32,7 @@ urlpatterns = [
     path('gongu/', gongu.views.gongu, name='gongu'),
     path('signup/', accounts.views.signup, name='signup'),
     path('login/', accounts.views.login, name='login'),
+    path('logout/', accounts.views.logout, name='logout')
     
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -71,7 +71,15 @@
           <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
                  aria-haspopup="true" aria-expanded="false">환영합니다. {{ user.username }} 님!</a>
-                 
+             
+             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  
+                  <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                  <form id="logout" method="POST" action="{% url 'logout' %}">
+                      {% csrf_token %} <input type="hidden" />
+                  </form>
+              </div>
+          </li>      
                  
           {% else %}
           <li class="nav-item">
@@ -91,7 +99,7 @@
         <a class="p-2 text-muted" href="{%url 'information' %}">방 정보보기</a>
         <a class="p-2 text-muted" href="{%url 'gongu' %}">공구</a>
         <a class="p-2 text-muted" href="#">룸메이트 찾기</a>
-        <a class="p-2 text-muted" href="#">커뮤니티</a>
+        <a class="p-2 text-muted" href="https://open.kakao.com/o/gjQOpqyb">커뮤니티</a>
       </nav>
     </div>
 
